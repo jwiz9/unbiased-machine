@@ -9,3 +9,4 @@ The purpose of this project is to create a password generator using the base cod
 ## Usage
 
 Use this README to explore my motivations to this password generator project. 
+![Screenshot-1](https://user-images.githubusercontent.com/112971337/190717400-b8f1df1f-eb89-427b-88ea-847c18d46f6b.png)
