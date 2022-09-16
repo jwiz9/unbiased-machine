@@ -1,12 +1,12 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-
+let generateBtn = document.querySelector("#generate");
+// Random Number Generator
 function randomInt(min, max)  {
   if (!max) {
     max = min
     min = 0
   }
-  var rand = Math.random()
+  let rand = Math.random()
   return Math.floor(min*(1 - rand) + rand*max)
 }
 
@@ -16,31 +16,31 @@ function getRandomItem(list) {
 
 function generatePassword() {
 // 1. Prompts the user 
-  var userInput = window.prompt("Choose the length of your password (any number between 8 to 128 characters)")
+  let userInput = window.prompt("Choose the length of your password (any number between 8 to 128 characters). Then click OK.")
 
-  var passwordLength = parseInt(userInput)
+  let passwordLength = parseInt(userInput)
 // 1a. Password Length 8-128 characters
   if (isNaN(passwordLength)) {
-    window.alert("Please select a number")
+    window.alert("Please Generate Password again and select a number between 8-128.")
     return
   } 
 
   if (passwordLength < 8 || passwordLength > 128) {
-    window.alert("Invalid password length. Please select a number between 8 to 128")
+    window.alert("Invalid password length. Please Generate Password again and select a number between 8 to 128.")
     return
   }
 // 1b. Lowercase, uppercase, numbers, special characters
-  var userWantsNumbers = window.confirm("Would you like numbers as characters?")
-  var userWantsSymbols = window.confirm("Would you like symbols as characters?")
-  var userWantsLowercase = window.confirm("Would you like lowercase letters as characters?")
-  var userWantsUppercase = window.confirm("Would you like uppercase letters as characters?")
+  let userWantsNumbers = window.confirm("Would you like numbers as characters? Click OK for Yes, Cancel for No.")
+  let userWantsSymbols = window.confirm("Would you like symbols as characters? Click OK for Yes, Cancel for No.")
+  let userWantsLowercase = window.confirm("Would you like lowercase letters as characters? Click OK for Yes, Cancel for No.")
+  let userWantsUppercase = window.confirm("Would you like uppercase letters as characters? Click OK for Yes, Cancel for No.")
   
-  var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-  var symbols = ["@", "#", "$", "%"];
-  var lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-  var uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I,", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  let numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+  let symbols = ["@", "#", "$", "%"];
+  let lowercaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  let uppercaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I,", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-  var optionsCart = []
+  let optionsCart = []
 
   if (userWantsNumbers === true)  {
     optionsCart.push(numbers)
@@ -62,11 +62,11 @@ function generatePassword() {
     optionsCart.push(lowercaseLetters)
   }
 
-  var generatedPassword = ""
+  let generatedPassword = ""
 
-  for (var i = 0; i < passwordLength; i++) {
-    var randomList = getRandomItem(optionsCart)
-    var randomChar = getRandomItem(randomList)
+  for (let i = 0; i < passwordLength; i++) {
+    let randomList = getRandomItem(optionsCart)
+    let randomChar = getRandomItem(randomList)
     generatedPassword += randomChar
   }
 // 3. Generate Password 
@@ -75,8 +75,8 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
