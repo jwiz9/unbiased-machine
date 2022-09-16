@@ -59,7 +59,7 @@ function generatePassword() {
   }
  // 2. Validate the input
   if (optionsCart.length === 0) {
-  optionsCart.push(lowercaseLetters)
+    optionsCart.push(lowercaseLetters)
   }
 
   var generatedPassword = ""
@@ -68,8 +68,9 @@ function generatePassword() {
     var randomList = getRandomItem(optionsCart)
     var randomChar = getRandomItem(randomList)
     generatedPassword += randomChar
-  } 
-  
+  }
+// 3. Generate Password 
+  return generatedPassword
 }
 
 // Write password to the #password input
